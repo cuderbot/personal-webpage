@@ -5,8 +5,9 @@
     "name": "Javier Becerra",
     "email": "cuderboto002@gmail.com"
   },
-  "description": "my personal webpage",
+  "description": "Mi pagina web la cual sirve de portafolio, blog, y cualquier experimento que se me ocurra.",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
