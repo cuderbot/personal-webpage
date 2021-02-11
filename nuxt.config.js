@@ -53,4 +53,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Define the source directory of your Nuxt.js application
+  srcDir: 'src/',
 }
