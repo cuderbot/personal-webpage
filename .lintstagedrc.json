@@ -1,3 +1,4 @@
 {
-  "**/*.+(js|vue)": ["yarn lint"]
+  "*.{js,vue}": "eslint",
+  "*.{css,vue}": "stylelint"
 }

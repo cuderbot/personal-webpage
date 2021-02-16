@@ -1,13 +1,17 @@
-module.exports ={
-    extends: [
-      // add more generic rulesets here, such as:
-      // 'eslint:recommended',
-      "plugin:vue/vue3-recommended",
-      "prettier",
-      "prettier/vue",
-    ],
-    rules: {
-      // override/add rules settings here, such as:
-      // 'vue/no-unused-vars': 'error'
-    },
-  };
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'prettier',
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
+  ],
+  plugins: ['prettier'],
+  // add your custom rules here
+  rules: {},
+}
