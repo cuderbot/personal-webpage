@@ -21,6 +21,12 @@
       ],
       "@/*": [
         "src/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/layout/*": [
+        "src/components/layout/*"
       ]
     },
     "types": [

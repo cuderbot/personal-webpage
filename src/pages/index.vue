@@ -1,34 +1,45 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <card title="Free" icon="github">
-        Open source on <a href="https://github.com/buefy/buefy"> GitHub </a>
-      </card>
-
-      <card title="Responsive" icon="cellphone-link">
-        <b class="has-text-grey"> Every </b> component is responsive
-      </card>
-
-      <card title="Modern" icon="alert-decagram">
-        Built with <a href="https://vuejs.org/"> Vue.js </a> and
-        <a href="http://bulma.io/"> Bulma </a>
-      </card>
-
-      <card title="Lightweight" icon="arrange-bring-to-front">
-        No other internal dependency
-      </card>
-    </div>
-  </section>
+  <div>
+    <section class="hero">
+      <div class="container">
+        <h1 class="title">Buenas! Me llamo Javier Becerra.</h1>
+        <p class="subtitle">y soy desarrollador.</p>
+      </div>
+    </section>
+    <section id="about-me" class="section">
+      <div class="container">
+        <div class="content is-medium">
+          <h1>Sobre mí...</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat
+            platea interdum primis, fames sapien odio tempus donec sed tellus
+            vel sociis condimentum, ut velit facilisis senectus porta curabitur
+            diam tortor leo lacus. Rhoncus tempor risus luctus cursus tincidunt
+            placerat vestibulum, urna litora laoreet diam dis quisque, morbi
+            quis parturient elementum tellus etiam. Justo netus sodales
+            tristique tellus quisque potenti facilisis porttitor, habitasse non
+            cum vel montes auctor aenean faucibus purus, aliquet urna placerat
+            dapibus quis taciti est.
+          </p>
+          <p>
+            Morbi praesent class eleifend curae sed mi torquent eu convallis,
+            quam facilisis nisl eros risus ultricies tristique primis, proin
+            bibendum quis rhoncus sapien tempor facilisi cubilia. Ad inceptos
+            felis volutpat imperdiet maecenas blandit, neque non parturient
+            primis fringilla malesuada vestibulum, proin tempor pulvinar tellus
+            quis. Vulputate pulvinar ridiculus sapien montes litora penatibus
+            ligula nascetur, ullamcorper libero nec tristique egestas risus
+            primis sociosqu, pellentesque senectus et molestie inceptos enim
+            turpis.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-import Card from '~/components/Card'
-
 export default {
   name: 'HomePage',
-
-  components: {
-    Card,
-  },
 }
 </script>
