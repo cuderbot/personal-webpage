@@ -15,8 +15,10 @@
           </b-field>
           <b-field>
             <div class="buttons">
-              <b-button type="is-success">Ingresar</b-button>
-              <b-button type="default">Atrás</b-button>
+              <b-button type="is-success" native-type="submit"
+                >Ingresar</b-button
+              >
+              <b-button type="default" @click="back">Atrás</b-button>
             </div>
           </b-field>
         </form>
@@ -32,6 +34,9 @@ export default {
   methods: {
     onLogin() {
       return null
+    },
+    back() {
+      this.$router.back()
     },
   },
 }
