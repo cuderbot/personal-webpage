@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="column is-5">
-          <form @submit.prevent="onContact">
+          <form class="box" @submit.prevent="onContact">
             <b-field label="tu correo">
               <b-input v-model="email" type="email" />
             </b-field>
@@ -17,7 +17,7 @@
               <b-input v-model="message" type="textarea" />
             </b-field>
             <b-field>
-              <b-input type="submit" label="Enviar" />
+              <b-button type="is-success" native-type="submit">Enviar</b-button>
             </b-field>
           </form>
         </div>
