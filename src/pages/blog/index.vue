@@ -26,7 +26,7 @@ export default {
         {
           key: 0,
           name: '',
-          tags: ['#getting-started', '#test'],
+          tags: ['getting-started', 'test'],
         },
       ],
     }

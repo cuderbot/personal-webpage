@@ -7,7 +7,7 @@
         :key="index"
         class="button tag is-light"
       >
-        {{ tag }}
+        {{ computedTag(tag) }}
       </button>
     </div>
   </div>
@@ -23,6 +23,11 @@ export default {
       default() {
         return Array.of([])
       },
+    },
+  },
+  methods: {
+    computedTag(tag) {
+      return `#${tag}`
     },
   },
 }
