@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section class="hero">
       <div class="container">
         <h1 class="title">Buenas! Me llamo Javier Becerra.</h1>
@@ -35,7 +35,39 @@
         </div>
       </div>
     </section>
-  </div>
+    <section id="contact-me" class="section is-medium">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-5">
+            <div class="container content">
+              <h1 class="title is-1">Contacto</h1>
+              <p>
+                ¿Estas búscando a alguien con mis habilidades? Contactamé 😁
+              </p>
+            </div>
+          </div>
+          <div class="column is-5">
+            <form class="box">
+              <b-field label="Tu nombre">
+                <b-input />
+              </b-field>
+              <b-field label="Tu correo de contacto">
+                <b-input />
+              </b-field>
+              <b-field label="agrega algún mensaje">
+                <b-input type="textarea" />
+              </b-field>
+              <b-field>
+                <b-button type="is-success" native-type="submit">
+                  Enviar
+                </b-button>
+              </b-field>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
