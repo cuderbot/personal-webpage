@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article class="hero">
+    <section class="hero">
       <div class="hero-body">
         <div class="container">
           <div class="columns">
@@ -38,7 +38,7 @@
           </article>
         </div>
       </div>
-    </article>
+    </section>
   </main>
 </template>
 
