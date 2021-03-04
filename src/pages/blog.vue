@@ -1,7 +1,11 @@
 <template>
   <main>
-    <section>
-      <h1>Blog's page</h1>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-body">
+          <h1 class="title">Blog</h1>
+        </div>
+      </div>
     </section>
     <section>
       <div class="container">
