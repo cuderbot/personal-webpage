@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="hero">
+    <article class="hero">
       <div class="hero-body">
         <div class="container">
           <div class="columns">
@@ -14,7 +14,7 @@
             </div>
           </div>
 
-          <section class="section">
+          <article class="section">
             <div class="columns">
               <div class="column is-8 is-offset-2">
                 <div class="content is-medium">
@@ -35,10 +35,10 @@
                 </div>
               </div>
             </div>
-          </section>
+          </article>
         </div>
       </div>
-    </section>
+    </article>
   </main>
 </template>
 
