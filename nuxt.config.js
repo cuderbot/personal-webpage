@@ -57,6 +57,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
