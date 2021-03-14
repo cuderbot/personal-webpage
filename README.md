@@ -3,8 +3,12 @@
   <p style="font-size:12px">Mi pagina web la cual sirve de portafolio, blog, y cualquier experimento que se me ocurra</p>
   <h3>Powered by ⚙️</h3>
   <p>
-      <img height="21px" src="https://vuejs.org/images/logo.png" alt="Vuejs logo" />
-      <img height="21px" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.cb8046c163f77190406dfbf4dec89848.svg" alt="Tailwindcss logo" />
+      <a href="https://nuxtjs.org/">
+        <img height="21px" src="./docs/logos/nuxt-logo.svg" alt="Nuxt logo" />
+      </a>
+      <a href="https://tailwindcss.com/">
+        <img height="21px" src="./docs/logos/tailwindcss-logo.svg" alt="Tailwindcss logo" />
+      </a>
   </p>
 </div>
 
@@ -23,31 +27,32 @@ Repositorio que contiene el frontend de mi pagina web. La cuál sirve para admin
 
 ## 🔨 Instalación
 
-```
+```shell
     $ yarn
 ```
 
 ## 📇 Como ejecutar la app para desarrollo
 
-```
-    $ yarn serve
+```shell
+    $ yarn dev
 ```
 
 ## 🚀 Como compilar la app para producción
 
-```
+```shell
     $ yarn build
+    $ yarn start
 ```
 
 ## ⚙️ Como ejecutar las pruebas
 
-```
+```shell
     $ yarn test
 ```
 
 ## 🎨 Como ejecutar el linter
 
-```
+```shell
     $ yarn lint
 ```
 
