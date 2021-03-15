@@ -6,8 +6,8 @@
       <a href="https://nuxtjs.org/">
         <img height="21px" src="./docs/logos/nuxt-logo.svg" alt="Nuxt logo" />
       </a>
-      <a href="https://tailwindcss.com/">
-        <img height="21px" src="./docs/logos/tailwindcss-logo.svg" alt="Tailwindcss logo" />
+      <a href="https://bulma.io/">
+        <img height="21px" src="./docs/logos/bulma-logo.png" alt="Bulmacss logo" />
       </a>
   </p>
 </div>
