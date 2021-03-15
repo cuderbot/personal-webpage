@@ -1,5 +1,9 @@
 <template>
-  <nuxt />
+  <div id="app">
+    <layout-header />
+    <nuxt />
+    <layout-footer />
+  </div>
 </template>
 
 <script>
