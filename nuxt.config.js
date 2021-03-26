@@ -49,6 +49,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -59,6 +61,9 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+
+  // Content module configuration: https://content.nuxtjs.org/configuration/
+  content: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
