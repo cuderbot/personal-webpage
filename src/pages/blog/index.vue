@@ -4,21 +4,31 @@
       <div class="container">
         <h1 class="title">Blog</h1>
         <form>
-          <b-field label="Find a JS framework">
+          <b-field>
             <b-autocomplete
               rounded
-              v-model="name"
-              :data="filteredDataArray"
-              placeholder="e.g. jQuery"
-              icon="magnify"
               clearable
+              icon="magnify"
+              v-model="search"
+              :data="filteredTitles"
+              placeholder="Busca algun post"
               @select="(option) => (selected = option)"
             >
-              <template #empty>No results found</template>
+              <template #empty>No se encontro el post :(</template>
             </b-autocomplete>
           </b-field>
         </form>
       </div>
+    </section>
+    <section class="section">
+      <ul v-if="articles.length">
+        <li v-for="article of articles" :key="article.slug">
+          <NuxtLink
+            :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+            >{{ article.title }}</NuxtLink
+          >
+        </li>
+      </ul>
     </section>
   </main>
 </template>
@@ -27,32 +37,23 @@
 export default {
   data() {
     return {
-      data: [
-        'Angular',
-        'Angular 2',
-        'Aurelia',
-        'Backbone',
-        'Ember',
-        'jQuery',
-        'Meteor',
-        'Node.js',
-        'Polymer',
-        'React',
-        'RxJS',
-        'Vue.js',
-      ],
-      name: '',
+      search: '',
       selected: null,
     }
   },
   computed: {
-    filteredDataArray() {
-      return this.data.filter((option) => {
-        return (
-          option.toString().toLowerCase().indexOf(this.name.toLowerCase()) >= 0
-        )
-      })
+    filteredTitles() {
+      const titles = this.articles.map((article) => article.title)
+      return titles.filter(
+        (option) =>
+          option.toString().toLowerCase().indexOf(this.search.toLowerCase()) >=
+          0
+      )
     },
+  },
+  async asyncData({ $content }) {
+    const articles = await $content('articles').fetch()
+    return { articles }
   },
 }
 </script>
