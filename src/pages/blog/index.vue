@@ -20,21 +20,18 @@
         </form>
       </div>
     </section>
-    <section class="section">
-      <ul v-if="articles.length">
-        <li v-for="article of articles" :key="article.slug">
-          <NuxtLink
-            :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-            >{{ article.title }}</NuxtLink
-          >
-        </li>
-      </ul>
+    <section class="section" v-if="articles.length">
+      <PostCard />
     </section>
   </main>
 </template>
 
 <script>
+import PostCard from '@/components/blog/post-card.vue'
+
 export default {
+  name: 'blog',
+  components: { PostCard },
   data() {
     return {
       search: '',
