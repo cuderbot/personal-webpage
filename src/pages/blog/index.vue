@@ -21,7 +21,14 @@
       </div>
     </section>
     <section class="section" v-if="articles.length">
-      <PostCard />
+      <PostCard
+        v-for="article in articles"
+        :key="article.slug"
+        :title="article.title"
+        :description="article.description"
+        :tags="article.categories.split(',')"
+        :createdAt="article.createdAt"
+      />
     </section>
   </main>
 </template>
