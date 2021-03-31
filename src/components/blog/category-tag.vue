@@ -1,7 +1,5 @@
 <template>
-  <p class="post-categories">
-    <span class="tag is-success">{{ title }}</span>
-  </p>
+  <span class="tag is-rounded" :class="computedClass">{{ title }}</span>
 </template>
 
 <script>
@@ -11,6 +9,24 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      colors: [
+        'is-black',
+        'is-dark',
+        'is-primary',
+        'is-info',
+        'is-success',
+        'is-warning',
+        'is-danger',
+      ],
+    }
+  },
+  computed: {
+    computedClass() {
+      return this.colors[Math.floor(Math.random() * this.colors.length)]
     },
   },
 }

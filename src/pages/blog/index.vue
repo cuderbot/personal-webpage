@@ -11,7 +11,7 @@
               icon="magnify"
               v-model="search"
               :data="filteredTitles"
-              placeholder="Busca algun post"
+              placeholder="Busca algun post..."
               @select="(option) => (selected = option)"
             >
               <template #empty>No se encontro el post :(</template>
@@ -21,14 +21,17 @@
       </div>
     </section>
     <section class="section" v-if="articles.length">
-      <PostCard
-        v-for="article in articles"
-        :key="article.slug"
-        :title="article.title"
-        :description="article.description"
-        :tags="article.categories.split(',')"
-        :createdAt="article.createdAt"
-      />
+      <div class="container">
+        <PostCard
+          v-for="article in articles"
+          :key="article.slug"
+          :title="article.title"
+          :link="article.slug"
+          :description="article.description"
+          :tags="article.categories.split(',')"
+          :createdAt="article.createdAt"
+        />
+      </div>
     </section>
   </main>
 </template>
@@ -56,7 +59,9 @@ export default {
     },
   },
   async asyncData({ $content }) {
-    const articles = await $content('articles').fetch()
+    const articles = await $content('articles')
+      .sortBy('createdAt', 'asc')
+      .fetch()
     return { articles }
   },
 }
