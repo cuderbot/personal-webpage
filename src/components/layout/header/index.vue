@@ -82,43 +82,48 @@ export default {
       ],
     }
   },
-  mounted() {
-    const h = document.documentElement
-    const body = document.body
-    const progress = document.querySelector('#progress')
-    let scroll = undefined
-    let scrollpos = window.scrollY
-    let header = document.getElementById('header')
-    const navcontent = document.getElementById('nav-content')
+  methods: {
+    progressBar() {
+      const h = document.documentElement
+      const body = document.body
+      const progress = document.querySelector('#progress')
+      let scroll = undefined
+      let scrollpos = window.scrollY
+      let header = document.getElementById('header')
+      const navcontent = document.getElementById('nav-content')
 
-    document.addEventListener('scroll', function () {
-      /*Refresh scroll % width*/
-      scroll =
-        ((h['scrollTop'] || body['scrollTop']) /
-          ((h['scrollHeight'] || body['scrollHeight']) - h.clientHeight)) *
-        100
-      progress.style.setProperty('--scroll', scroll + '%')
+      document.addEventListener('scroll', function () {
+        /*Refresh scroll % width*/
+        scroll =
+          ((h['scrollTop'] || body['scrollTop']) /
+            ((h['scrollHeight'] || body['scrollHeight']) - h.clientHeight)) *
+          100
+        progress.style.setProperty('--scroll', scroll + '%')
 
-      /*Apply classes for slide in bar*/
-      scrollpos = window.scrollY
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY
 
-      if (scrollpos > 10) {
-        header.classList.add('bg-white')
-        header.classList.add('shadow')
-        navcontent.classList.remove('bg-gray-100')
-        navcontent.classList.add('bg-white')
-      } else {
-        header.classList.remove('bg-white')
-        header.classList.remove('shadow')
-        navcontent.classList.remove('bg-white')
-        navcontent.classList.add('bg-gray-100')
+        if (scrollpos > 10) {
+          header.classList.add('bg-white')
+          header.classList.add('shadow')
+          navcontent.classList.remove('bg-gray-100')
+          navcontent.classList.add('bg-white')
+        } else {
+          header.classList.remove('bg-white')
+          header.classList.remove('shadow')
+          navcontent.classList.remove('bg-white')
+          navcontent.classList.add('bg-gray-100')
+        }
+      })
+
+      //Javascript to toggle the menu
+      document.getElementById('nav-toggle').onclick = function () {
+        document.getElementById('nav-content').classList.toggle('hidden')
       }
-    })
-
-    //Javascript to toggle the menu
-    document.getElementById('nav-toggle').onclick = function () {
-      document.getElementById('nav-content').classList.toggle('hidden')
-    }
+    },
+  },
+  mounted() {
+    this.progressBar()
   },
 }
 </script>

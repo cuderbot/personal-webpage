@@ -1,27 +1,44 @@
 <template>
-  <div class="card mb-2">
-    <div class="card-content">
-      <div class="content">
-        <h2 class="post-title">
-          <nuxt-link :to="computedSlug" :title="title">
-            {{ title }}
-          </nuxt-link>
-        </h2>
-        <div class="tags">
-          <CategoryTag v-for="tag in tags" :key="tag" :title="tag" />
-        </div>
-        <p class="sub-title">
+  <article class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+    <div
+      class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg"
+    >
+      <nuxt-link
+        :to="computedSlug"
+        class="flex flex-wrap no-underline hover:no-underline"
+      >
+        <!-- <img
+          src="https://source.unsplash.com/collection/225/800x600"
+          class="h-64 w-full rounded-t pb-6"
+        /> -->
+        <!-- <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+          GETTING STARTED
+        </p> -->
+        <h6 class="w-full font-bold text-xl text-gray-900 capitalize px-6">
+          {{ title }}
+        </h6>
+        <p class="text-gray-800 font-serif text-base px-6 mb-5">
           {{ description }}
         </p>
-        <span>
-          publicado el
-          <time class="has-text-weight-bold" :datetime="computedDate">
-            {{ computedDate }}
-          </time>
-        </span>
+      </nuxt-link>
+    </div>
+    <div
+      class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6"
+    >
+      <div class="flex items-start justify-between">
+        <!-- <img
+          class="w-8 h-8 rounded-full mr-4 avatar"
+          data-tippy-content="Author Name"
+          src="http://i.pravatar.cc/300"
+          alt="Avatar of Author"
+        /> -->
+        <p class="text-gray-600 text-xs md:text-sm">{{ computedDate }}</p>
+        <p class="text-gray-600 text-xs md:text-sm">
+          {{ computedReadingTime }} min de lectura
+        </p>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -31,6 +48,10 @@ export default {
   name: 'PostCard',
   components: { CategoryTag },
   props: {
+    content: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -53,12 +74,20 @@ export default {
     },
   },
   computed: {
+    computedReadingTime() {
+      let minutes = 0
+      const contentString = JSON.stringify(this.content)
+      const words = contentString.split(' ').length
+      const wordsPerMinute = 200
+      minutes = Math.ceil(words / wordsPerMinute)
+      return minutes
+    },
     computedSlug() {
       return `/blog/${this.link}`
     },
     computedDate() {
-      const date = new Date(this.createdAt)
-      return `${date.getDay()}/${date.getDate()}/${date.getFullYear()}`
+      const date = new Date(this.createdAt).toLocaleDateString()
+      return `publicado el ${date}`
     },
   },
 }

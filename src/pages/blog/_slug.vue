@@ -21,7 +21,7 @@
           {{ article.title }}
         </h1>
         <span class="text-sm md:text-base font-normal text-gray-600">
-          Publicado el {{ article.createdAt }}
+          Publicado el {{ computedPublishedDate }}
         </span>
       </div>
 
@@ -67,9 +67,14 @@ export default {
       this.$router.back()
     },
   },
+  computed: {
+    computedPublishedDate() {
+      return new Date(this.article.createdAt).toLocaleDateString()
+    },
+  },
   head() {
     return {
-      title: this.article.title,
+      title: `JaviDev | ${this.article.title}`,
       meta: [
         {
           hid: 'description',
