@@ -33,7 +33,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~plugins/buefy'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -57,6 +57,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -69,6 +70,31 @@ export default {
   pwa: {
     manifest: {
       lang: 'es',
+    },
+  },
+
+  // Tailwindcss configuration: https://tailwindcss.nuxtjs.org/options#config
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    jit: true,
+    exposeConfig: false,
+    config: {
+      purge: [
+        './components/**/*.{vue,js}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './nuxt.config.{js,ts}',
+      ],
+      darkMode: false, // or 'media' or 'class'
+      theme: {
+        extend: {},
+      },
+      variants: {
+        extend: {},
+      },
+      plugins: [],
     },
   },
 }

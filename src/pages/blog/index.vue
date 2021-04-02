@@ -1,22 +1,10 @@
 <template>
-  <main>
+  <main class="container w-full md:max-w-3xl mx-auto pt-20">
     <section class="section">
       <div class="container">
         <h1 class="title">Blog</h1>
         <form>
-          <b-field>
-            <b-autocomplete
-              rounded
-              clearable
-              icon="magnify"
-              v-model="search"
-              :data="filteredTitles"
-              placeholder="Busca algun post..."
-              @select="(option) => (selected = option)"
-            >
-              <template #empty>No se encontro el post :(</template>
-            </b-autocomplete>
-          </b-field>
+          <input type="search" v-model="search" />
         </form>
       </div>
     </section>
