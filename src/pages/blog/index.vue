@@ -15,7 +15,7 @@
       <PostCard
         v-for="article in articles"
         :key="article.slug"
-        :content="article.body"
+        :content="JSON.stringify(article.body)"
         :title="article.title"
         :link="article.slug"
         :description="article.description"
