@@ -1,6 +1,11 @@
 <template>
   <li class="mr-3">
-    <nuxt-link class="nav-item-label" :to="link">
+    <nuxt-link
+      :class="isSelected ? 'font-bold' : null"
+      @click.native="onClick"
+      class="nav-item-label"
+      :to="link"
+    >
       {{ label }}
     </nuxt-link>
   </li>
@@ -17,6 +22,15 @@ export default {
     link: {
       type: String,
       required: true,
+    },
+    isSelected: {
+      type: Boolean,
+      required: false,
+    },
+  },
+  methods: {
+    onClick() {
+      this.$emit('click', this.link)
     },
   },
 }

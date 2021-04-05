@@ -33,64 +33,27 @@
         </button>
       </div>
 
-      <nav
-        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20"
-        id="nav-content"
-      >
-        <ul class="list-reset lg:flex justify-end flex-1 items-center">
-          <li class="mr-3">
-            <a
-              class="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
-              href="#"
-              >Active</a
-            >
-          </li>
-          <NavItem
-            v-for="nav in navigation"
-            :key="nav.label"
-            :label="nav.label"
-            :link="nav.link"
-          />
-        </ul>
-      </nav>
+      <NavigationBar />
     </div>
   </header>
 </template>
 
 <script>
 import Logo from './logo'
-import NavItem from './nav-item'
+import NavigationBar from './nav-bar'
 
 export default {
   name: 'Header',
-  components: { Logo, NavItem },
-  data() {
-    return {
-      navigation: [
-        {
-          label: 'Proyectos',
-          link: 'proyectos',
-        },
-        {
-          label: 'Blog',
-          link: 'blog',
-        },
-        {
-          label: 'Contacto',
-          link: 'contacto',
-        },
-      ],
-    }
-  },
+  components: { Logo, NavigationBar },
   methods: {
     progressBar() {
-      const h = document.documentElement
-      const body = document.body
-      const progress = document.querySelector('#progress')
-      let scroll = undefined
-      let scrollpos = window.scrollY
-      let header = document.getElementById('header')
-      const navcontent = document.getElementById('nav-content')
+      var h = document.documentElement,
+        body = document.body,
+        progress = document.querySelector('#progress'),
+        scroll = undefined,
+        scrollpos = window.scrollY,
+        header = document.getElementById('header'),
+        navcontent = document.getElementById('nav-content')
 
       document.addEventListener('scroll', function () {
         /*Refresh scroll % width*/
