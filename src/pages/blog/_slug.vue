@@ -37,10 +37,6 @@
     <!--Divider-->
     <hr class="border-b-2 border-gray-400 mb-8 mx-4" />
 
-    <!--Subscribe-->
-    <Subscriber />
-    <!-- /Subscribe-->
-
     <!--Author-->
     <Author />
     <!--/Author-->
@@ -56,12 +52,11 @@
 
 <script>
 import Author from '@/components/blog/author.vue'
-import Subscriber from '@/components/blog/subscriber'
 import NextPrevLink from '@/components/blog/next-prev-link'
 import Tags from '@/components/blog/tags'
 
 export default {
-  components: { Author, NextPrevLink, Subscriber, Tags },
+  components: { Author, NextPrevLink, Tags },
   methods: {
     backToBlog() {
       this.$router.back()
